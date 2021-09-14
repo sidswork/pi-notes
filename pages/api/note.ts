@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { createNote } from "../../db/connection";
+import { db_createNote } from "../../db/connection";
 import { Note } from "../../db/Note";
 
 interface NotFound {
@@ -10,9 +10,8 @@ export default async function handler(
   res: NextApiResponse<Note | NotFound>
 ) {
   if (req.method === "POST") {
-    console.log(req.body);
     const { title, content } = req.body;
-    const id = createNote(title, content);
+    const id = db_createNote(title, content);
     console.info("LOG: note created with id " + id);
     res.status(200).json({ id, title, content });
   } else {

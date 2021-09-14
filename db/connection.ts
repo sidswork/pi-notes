@@ -3,7 +3,7 @@ import { Note } from "./Note";
 
 const db = sqlite3("notes.db");
 
-export const findAllNotes = (): Note[] => {
+export const db_findAllNotes = (): Note[] => {
   const stmt = db.prepare("SELECT * FROM note");
   const notes = stmt.all();
 
@@ -16,15 +16,25 @@ export const findAllNotes = (): Note[] => {
   });
 };
 
-export const deleteNote = (id: number): void => {
+export const db_deleteNote = (id: number): void => {
   const stmt = db.prepare("DELETE FROM note WHERE id=?");
   stmt.run(id);
 };
 
-export const createNote = (title: string, content: string): number => {
+export const db_createNote = (title: string, content: string): number => {
   const stmt = db.prepare("INSERT INTO note (title, content) VALUES (?,?)");
   const res = stmt.run(title, content);
   return parseInt(res.lastInsertRowid.toString());
+};
+
+export const db_updateNote = (
+  id: number,
+  title: string,
+  content: string
+): number => {
+  const stmt = db.prepare("UPDATE  note SET title=?, content=? WHERE id=?");
+  stmt.run(title, content, id);
+  return id;
 };
 
 export default db;

@@ -13,12 +13,6 @@
   --yellowgreen: #aaff00;
   --lightblue: rgb(0, 225, 255);
   --red: #af0000;
-  --highlight: linear-gradient(
-    130deg,
-    rgb(9, 0, 189) 0%,
-    rgba(121, 9, 82, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
 }
 
 /* Global stylesheet */
@@ -108,13 +102,10 @@ header:after {
   clear: both;
 }
 
-.hero {
-  padding: 2em;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(238deg, #0080ff, #00f, #8000ff);
+pre {
+  padding: 15px;
   border-radius: 5px;
-  color: var(--white);
-  box-shadow: black 5px 5px 2px;
+  background-color: var(--blue);
 }
 
 /* Header */
@@ -173,6 +164,111 @@ footer {
   font-size: 0.8em;
   font-weight: bold;
   color: var(--gray);
+}
+
+input,
+textarea,
+select {
+  margin-right: 1em;
+  padding: 0 1em;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+}
+
+textarea {
+  min-height: 10em;
+  padding: 1em;
+  resize: vertical;
+}
+
+button {
+  background-color: var(--white);
+  border-radius: 5px;
+  border: none;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 1em;
+  margin-right: 1em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button.danger-button {
+  background-color: var(--red);
+  color: var(--white);
+  font-weight: bold;
+}
+
+button.danger-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0;
+}
+
+label {
+  color: var(--offwhite);
+  font-size: 0.9em;
+  margin-bottom: 0.2em;
+}
+
+.margin-bottom {
+  margin-bottom: 25px;
+}
+
+.note-container {
+  padding: 25px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--offwhite);
+}
+
+.note-container:hover {
+  background-color: var(--darkgray);
+}
+
+.new-note-container {
+  padding: 0 10px;
+}
+
+.new-note-container > h2 {
+  margin: 0;
+}
+
+.note-title {
+  margin-bottom: 20px;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.25em;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.note-content {
+  padding: 10px;
+}
+
+.delete-button {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: var(--red);
 }
 
 @-webkit-keyframes rainbow {
@@ -241,96 +337,4 @@ footer {
   -z-animation: rainbow 16s ease infinite;
   -o-animation: rainbow 16s ease infinite;
   animation: rainbow 16s ease infinite;
-}
-
-input,
-textarea,
-select {
-  margin-right: 1em;
-  padding: 0 1em;
-  height: 25px;
-  border-radius: 5px;
-  border: none;
-}
-
-textarea {
-  height: auto !important;
-  padding: 1em;
-}
-
-button {
-  background-color: var(--white);
-  border-radius: 5px;
-  border: none;
-  height: 25px;
-  line-height: 25px;
-  padding: 0 1em;
-  margin-right: 1em;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-button.danger-button {
-  background-color: var(--red);
-  color: var(--white);
-  font-weight: bold;
-}
-
-button.danger-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.form-control {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5em 0;
-}
-
-label {
-  color: var(--offwhite);
-  font-size: 0.9em;
-  margin-bottom: 0.2em;
-}
-
-.margin-bottom {
-  margin-bottom: 25px;
-}
-
-.note-container {
-  padding: 15px;
-  border-bottom: 1px dashed var(--lightgray);
-  display: flex;
-  justify-content: space-between;
-}
-.new-note-container {
-  padding: 25px 10px;
-}
-.note-container:hover {
-  background: var(--darkgray);
-}
-
-.note-title {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.note-content {
-  white-space: pre-wrap;
-}
-
-.delete-button {
-  width: 30px;
-  height: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.delete-button:hover {
-  background-color: var(--red);
 }

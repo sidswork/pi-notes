@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { saveNote } from "../db/service";
 
-interface Props {
-  saveNote: (note: CreateNoteDto) => void;
-}
-
-export interface CreateNoteDto {
-  title: string;
-  content: string;
-}
-
-const NewNote = ({ saveNote }: Props) => {
+const NewNote = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -31,7 +23,7 @@ const NewNote = ({ saveNote }: Props) => {
   if (isOpen) {
     return (
       <div className="margin-bottom new-note-container">
-        <h3>Crate New Note</h3>
+        <h2>Crate New Note</h2>
         <div className="form-control">
           <input
             placeholder="title"
@@ -42,7 +34,7 @@ const NewNote = ({ saveNote }: Props) => {
         </div>
         <div className="form-control">
           <textarea
-            placeholder="content"
+            placeholder="content (markdown supported)"
             value={content}
             onChange={(e) => setContent(e.target.value)}
           ></textarea>
