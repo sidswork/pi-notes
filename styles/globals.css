@@ -103,11 +103,20 @@ header:after {
 }
 
 pre {
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
-  background-color: var(--blue);
 }
 
+:not(pre) > code {
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+
+pre,
+code {
+  background-color: var(--lightgray);
+  color: var(--almostblack);
+}
 /* Header */
 
 /* Nav */
@@ -177,7 +186,7 @@ select {
 }
 
 textarea {
-  min-height: 10em;
+  min-height: 20em;
   padding: 1em;
   resize: vertical;
 }
