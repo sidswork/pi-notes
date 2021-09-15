@@ -40,8 +40,8 @@ const NoteCard = ({ note }: Props) => {
 
   if (isOpen) {
     return (
-      <div className="margin-bottom">
-        <h4>Update Note</h4>
+      <div className="margin-bottom note-form">
+        <h2>Update Note</h2>
         <div className="form-control">
           <input
             placeholder="title"

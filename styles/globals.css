@@ -234,11 +234,7 @@ label {
   background-color: var(--darkgray);
 }
 
-.new-note-container {
-  padding: 0 10px;
-}
-
-.new-note-container > h2 {
+.note-form > h2 {
   margin: 0;
 }
 
@@ -255,6 +251,13 @@ label {
 
 .note-content {
   padding: 10px;
+}
+
+.note-form {
+  background-color: var(--blue);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: black 5px 5px 2px;
 }
 
 .delete-button {

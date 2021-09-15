@@ -22,8 +22,8 @@ const NewNote = () => {
 
   if (isOpen) {
     return (
-      <div className="margin-bottom new-note-container">
-        <h2>Crate New Note</h2>
+      <div className="margin-bottom note-form">
+        <h2>Create Note</h2>
         <div className="form-control">
           <input
             placeholder="title"
